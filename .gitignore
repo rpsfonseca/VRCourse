@@ -38,4 +38,4 @@ sysinfo.txt
 # ignore build folder
 
 test_google_vr/
-.DS_Store
+*.DS_Store
