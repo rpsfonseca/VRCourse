@@ -34,3 +34,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# ignore build folder
+
+test_google_vr/
+.DS_Store
