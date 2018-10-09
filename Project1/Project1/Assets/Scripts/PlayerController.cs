@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public const float MAX_SPEED = 20.0f;
+    public const float MAX_SPEED = 5.0f;
     private const float FALL_LIMIT = -12575.0f;
 
     private bool walking = false;
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 
         if(Physics.Raycast (ray, out hit))
         {
-            if (hit.collider.name.Contains("Floor"))
+            if (hit.collider.name.Contains("Floor") )
             {
                 walking = false;
             }
