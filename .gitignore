@@ -40,3 +40,5 @@ sysinfo.txt
 test_google_vr/
 *.DS_Store
 example*/
+*.psd
+
