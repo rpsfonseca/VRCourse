@@ -2481,8 +2481,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 108
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -4252,7 +4252,6 @@ GameObject:
   - component: {fileID: 1769525105}
   - component: {fileID: 1769525108}
   - component: {fileID: 1769525107}
-  - component: {fileID: 1769525106}
   m_Layer: 9
   m_Name: Minimap pointer
   m_TagString: Untagged
@@ -4267,24 +4266,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1769525104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 19.9, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 2050161190}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1769525106
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769525104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1769525107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4844,7 +4831,6 @@ GameObject:
   - component: {fileID: 2050161190}
   - component: {fileID: 2050161191}
   - component: {fileID: 2050161189}
-  - component: {fileID: 2050161192}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4852,19 +4838,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &2050161189
-CapsuleCollider:
+--- !u!114 &2050161189
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050161188}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 12.140218
-  m_Height: 45.029297
-  m_Direction: 1
-  m_Center: {x: 0.004430771, y: -21.138672, z: 0.095487595}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f915b8f8767064ab4943aae137e469b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrCamera: {fileID: 2132327245}
+  toggleAngle: 20
+  speed: 3
+  moveforward: 0
+  movebackward: 0
 --- !u!4 &2050161190
 Transform:
   m_ObjectHideFlags: 0
@@ -4881,32 +4870,23 @@ Transform:
   m_Father: {fileID: 197582359}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!54 &2050161191
-Rigidbody:
+--- !u!143 &2050161191
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050161188}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
---- !u!114 &2050161192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2050161188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 179d46253ba9f2d4bb4cf6e2d09325c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.1
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2132327244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,6 +4898,7 @@ GameObject:
   - component: {fileID: 2132327248}
   - component: {fileID: 2132327247}
   - component: {fileID: 2132327246}
+  - component: {fileID: 2132327249}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -4996,3 +4977,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2132327249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132327244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb5dd43baba2d4dc1bab789615567e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycasterEventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  maxRaycastHits: 64
