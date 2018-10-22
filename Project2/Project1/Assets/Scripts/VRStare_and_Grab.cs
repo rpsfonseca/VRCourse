@@ -8,6 +8,7 @@ public class VRStare_and_Grab : MonoBehaviour {
     public Transform VRHand;
     public Rigidbody TargetObject;
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -31,5 +32,10 @@ public class VRStare_and_Grab : MonoBehaviour {
     public void GrabObject()
     {
         TargetObject.transform.parent = VRHand.transform;
+        TargetObject.transform.eulerAngles = new Vector3(
+             TargetObject.transform.eulerAngles.x,
+             TargetObject.transform.eulerAngles.y,
+             TargetObject.transform.eulerAngles.z
+        );
     }
 }
