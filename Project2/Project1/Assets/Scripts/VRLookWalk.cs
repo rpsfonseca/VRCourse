@@ -26,8 +26,6 @@ public class VRLookWalk : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(vrCamera.eulerAngles.x);
-
         if (vrCamera.eulerAngles.x >= 180 && vrCamera.eulerAngles.x <= (360 - toggleAngle) )
         {
             moveforward = true;

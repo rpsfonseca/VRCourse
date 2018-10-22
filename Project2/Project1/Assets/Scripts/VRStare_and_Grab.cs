@@ -18,7 +18,7 @@ public class VRStare_and_Grab : MonoBehaviour {
 	void Update () {
         stare_time = stare_time + Time.deltaTime;
 
-        if (stare_time >= 3f) // once a certain amount of time has passed, the object will be 'grabbed'
+        if (stare_time >= 2f && VRHand.childCount == 0) // once a certain amount of time has passed, the object will be 'grabbed'
         {
             GrabObject();
         }
@@ -30,12 +30,17 @@ public class VRStare_and_Grab : MonoBehaviour {
     }
 
     public void GrabObject()
-    {
+    {  
         TargetObject.transform.parent = VRHand.transform;
         TargetObject.transform.eulerAngles = new Vector3(
-             TargetObject.transform.eulerAngles.x,
-             TargetObject.transform.eulerAngles.y,
-             TargetObject.transform.eulerAngles.z
+             TargetObject.transform.eulerAngles.x - 80,
+             TargetObject.transform.eulerAngles.y + 194,
+             TargetObject.transform.eulerAngles.z + 92
         );
+
+        Debug.Log("X" + TargetObject.transform.eulerAngles.x);
+        Debug.Log("Y" + TargetObject.transform.eulerAngles.y);
+        Debug.Log("Z" + TargetObject.transform.eulerAngles.z);
+
     }
 }
