@@ -7,6 +7,9 @@ public class VRStare_and_Grab : MonoBehaviour {
     public float stare_time = 0f; // timer 
     public Transform VRHand;
     public Rigidbody TargetObject;
+    public bool grabbed = false;
+
+    public ChargeSpear spearCode;
 
 
 	// Use this for initialization
@@ -30,12 +33,16 @@ public class VRStare_and_Grab : MonoBehaviour {
     }
 
     public void GrabObject()
-    {  
+    {
+        grabbed = true;
+        spearCode.enabled = true;
         TargetObject.transform.parent = VRHand.transform;
+        TargetObject.transform.position = VRHand.transform.position + (VRHand.transform.forward * 10.0f);
         TargetObject.transform.eulerAngles = new Vector3(
              TargetObject.transform.eulerAngles.x - 80,
-             TargetObject.transform.eulerAngles.y + 194,
+             TargetObject.transform.eulerAngles.y + 194 + 45,
              TargetObject.transform.eulerAngles.z + 92
         );
+        spearCode.targetPos = TargetObject.transform.position + (TargetObject.transform.forward * 100.0f);
     }
 }

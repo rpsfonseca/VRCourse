@@ -6,6 +6,8 @@ public class AttackTrigger : MonoBehaviour
 {
     public Blaze blaze;
 
+    public bool spearThrow = false;
+
     // Use this for initialization
     void Start()
     {
@@ -23,6 +25,7 @@ public class AttackTrigger : MonoBehaviour
         if (other.name == "Player" && blaze)
         {
             blaze.StartBlazing();
+            spearThrow = true;
         }
     }
 
@@ -31,6 +34,7 @@ public class AttackTrigger : MonoBehaviour
         if (other.name == "Player" && blaze)
         {
             blaze.StopBlazing();
+            spearThrow = false;
         }
     }
 }
