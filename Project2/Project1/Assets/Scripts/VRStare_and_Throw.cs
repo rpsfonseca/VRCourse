@@ -37,6 +37,6 @@ public class VRStare_and_Throw : MonoBehaviour
     {
         Spear.isKinematic = false;
         Spear.transform.parent = null;
-        Spear.AddForce(VRHand.forward * 100);
+        Spear.AddForce(VRHand.forward * 10.0f);
     }
 }

@@ -11,11 +11,13 @@ public class ChargeSpear : MonoBehaviour
     public Transform vrHand;
     public Vector3 targetPos;
     public bool goingBackwards = false;
+    public HealthController health;
 
 	// Use this for initialization
 	void Start ()
     {
         triggerSpearThrow = FindObjectOfType<AttackTrigger>();
+        health = FindObjectOfType<HealthController>();
 		
 	}
 	
@@ -23,7 +25,7 @@ public class ChargeSpear : MonoBehaviour
 	void Update ()
     {
         //vrHand = grabCode.VRHand;
-        if (grabCode && grabCode.grabbed && triggerSpearThrow && triggerSpearThrow.spearThrow)
+        if (grabCode && grabCode.grabbed && triggerSpearThrow && triggerSpearThrow.spearThrow && health.health > 0)
         {
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 4.5f);
 
@@ -37,7 +39,7 @@ public class ChargeSpear : MonoBehaviour
                 else
                 {
                     goingBackwards = false;
-                    targetPos = transform.position + (transform.forward * 100.0f);
+                    targetPos = transform.position + (transform.forward * 10.0f);
                 }
             }
         }
@@ -46,7 +48,8 @@ public class ChargeSpear : MonoBehaviour
             goingBackwards = true;
             targetPos = vrHand.transform.position + (vrHand.transform.forward * 10.0f);
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 4.5f);
-        }
+        } 
+
 	}
 
     private void OnTriggerEnter(Collider other)

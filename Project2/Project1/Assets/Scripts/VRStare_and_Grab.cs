@@ -39,10 +39,10 @@ public class VRStare_and_Grab : MonoBehaviour {
         TargetObject.transform.parent = VRHand.transform;
         TargetObject.transform.position = VRHand.transform.position + (VRHand.transform.forward * 10.0f);
         TargetObject.transform.eulerAngles = new Vector3(
-             TargetObject.transform.eulerAngles.x - 80,
-             TargetObject.transform.eulerAngles.y + 194 + 45,
-             TargetObject.transform.eulerAngles.z + 92
+             VRHand.transform.eulerAngles.x + TargetObject.transform.eulerAngles.x + 60,
+             VRHand.transform.eulerAngles.y + TargetObject.transform.eulerAngles.y - 90,
+             VRHand.transform.eulerAngles.z + TargetObject.transform.eulerAngles.z 
         );
-        spearCode.targetPos = TargetObject.transform.position + (TargetObject.transform.forward * 100.0f);
+        spearCode.targetPos = TargetObject.transform.position + (TargetObject.transform.forward * 10.0f);
     }
 }
