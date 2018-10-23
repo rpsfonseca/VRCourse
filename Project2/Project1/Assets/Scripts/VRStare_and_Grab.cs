@@ -37,10 +37,5 @@ public class VRStare_and_Grab : MonoBehaviour {
              TargetObject.transform.eulerAngles.y + 194,
              TargetObject.transform.eulerAngles.z + 92
         );
-
-        Debug.Log("X" + TargetObject.transform.eulerAngles.x);
-        Debug.Log("Y" + TargetObject.transform.eulerAngles.y);
-        Debug.Log("Z" + TargetObject.transform.eulerAngles.z);
-
     }
 }
