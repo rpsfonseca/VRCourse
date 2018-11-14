@@ -10,12 +10,14 @@ public class VRStare_and_PlayVideo : MonoBehaviour {
     UnityEngine.Video.VideoPlayer videoPlayer;
     
 	// Use this for initialization
-	void Start () {
+	void Start()
+    {
         videoPlayer = this.transform.GetComponent<UnityEngine.Video.VideoPlayer>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update()
+    {
         stare_time = stare_time + Time.deltaTime;
 
         if (stare_time >= 2f) // once a certain amount of time has passed, the object will be 'grabbed'
