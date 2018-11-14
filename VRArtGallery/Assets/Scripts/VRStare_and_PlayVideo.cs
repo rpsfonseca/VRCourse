@@ -7,11 +7,11 @@ public class VRStare_and_PlayVideo : MonoBehaviour {
     public float stare_time = 0f; // timer 
     public bool grabbed = false;
 
-
-
+    UnityEngine.Video.VideoPlayer videoPlayer;
+    
 	// Use this for initialization
 	void Start () {
-		
+        videoPlayer = this.transform.GetComponent<UnityEngine.Video.VideoPlayer>();
 	}
 	
 	// Update is called once per frame
@@ -31,9 +31,6 @@ public class VRStare_and_PlayVideo : MonoBehaviour {
 
     public void PlayVideo()
     {
-        Debug.Log("play video");
-        grabbed = true;
-        GvrVideoPlayerTexture x = this.GetComponent<GvrVideoPlayerTexture>();
-        x.Play();
+        videoPlayer.Play();
     }
 }

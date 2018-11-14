@@ -45,10 +45,6 @@ public class VRLookWalk : MonoBehaviour
         if (moveforward == true)
         {
             Vector3 forward = vrCamera.TransformDirection(Vector3.forward);
-
-            Debug.Log("forward: " + forward);
-            Debug.Log("position: " + transform.position);
-
             cc.SimpleMove(forward * speed);
         }
         
