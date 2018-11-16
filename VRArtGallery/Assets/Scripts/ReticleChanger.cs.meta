@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:VRArtGallery/Assets/Scripts/ReticleChanger.cs.meta
 guid: 7960e2a84c8b7094db67d0f206b5fdcf
+=======
+guid: b1ab45052fe32405985b716bea08d207
+>>>>>>> 810e212b51aebddc4ffded8858f3ef79ad2a7561:VRArtGallery/Assets/Scripts/ReticleChanger.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
