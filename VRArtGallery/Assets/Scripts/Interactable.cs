@@ -7,9 +7,7 @@ public class Interactable : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        InteractionManager.onEngage += StartInteraction;
-        InteractionManager.onEngaging += Interaction;
-        InteractionManager.onDisengage += EndInteraction;
+
     }
 	
 	// Update is called once per frame
@@ -18,17 +16,17 @@ public class Interactable : MonoBehaviour {
 		
 	}
 
-    public void StartInteraction()
+    public virtual void StartInteraction()
     {
 
     }
 
-    public void Interaction()
+    public virtual void Interaction()
     {
 
     }
 
-    public void EndInteraction()
+    public virtual void EndInteraction()
     {
 
     }
