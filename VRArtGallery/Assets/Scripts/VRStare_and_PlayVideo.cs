@@ -5,7 +5,8 @@ using UnityEngine;
 public class VRStare_and_PlayVideo : MonoBehaviour {
 
     public float stare_time = 0f; // timer 
-    public bool grabbed = false;
+    public bool playing = false;
+    public Light light;
 
     UnityEngine.Video.VideoPlayer videoPlayer;
     
@@ -20,19 +21,32 @@ public class VRStare_and_PlayVideo : MonoBehaviour {
     {
         stare_time = stare_time + Time.deltaTime;
 
+        Debug.Log(light.intensity);
         if (stare_time >= 2f) // once a certain amount of time has passed, the object will be 'grabbed'
         {
             PlayVideo();
         }
-	}
+
+        if (playing && light.intensity > 0)
+        {
+            light.intensity =- 0.0000000001f;
+        }
+        Debug.Log(playing);
+       
+    }
 
     public void ResetStareTime()
     {
+        videoPlayer.Pause();
+        light.intensity = 1;
+        playing = false;
         stare_time = 0f;
     }
 
     public void PlayVideo()
     {
         videoPlayer.Play();
+        playing = true;
     }
+
 }
