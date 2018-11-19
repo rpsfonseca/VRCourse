@@ -25,6 +25,9 @@ public class VRLookWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown)
+            Debug.Log("INPUT: " + Input.inputString);
+
         if (vrCamera.eulerAngles.x >= 180 && vrCamera.eulerAngles.x <= (360 - toggleAngle) )
         {
             moveforward = true;

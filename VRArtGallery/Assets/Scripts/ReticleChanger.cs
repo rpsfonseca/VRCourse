@@ -17,7 +17,7 @@ public class ReticleChanger : MonoBehaviour {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward));
             if (hit.transform.gameObject.tag.Equals("Art"))
             {
-                Debug.Log("hit art");
+                //Debug.Log("hit art");
                 reticleIn.GetComponent<Renderer>().enabled = true;
                 reticleOut.GetComponent<Renderer>().enabled = false;
 
@@ -25,7 +25,7 @@ public class ReticleChanger : MonoBehaviour {
             }
             else
             {
-                Debug.Log("no hit art");
+                //Debug.Log("no hit art");
                 reticleIn.GetComponent<Renderer>().enabled = false;
                 reticleOut.GetComponent<Renderer>().enabled = true;
 

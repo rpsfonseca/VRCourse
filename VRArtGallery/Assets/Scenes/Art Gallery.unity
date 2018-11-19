@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964127, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1313,6 +1313,7 @@ GameObject:
   - component: {fileID: 131416203}
   - component: {fileID: 131416205}
   - component: {fileID: 131416204}
+  - component: {fileID: 131416206}
   m_Layer: 0
   m_Name: 'Building B_Material #3993_0'
   m_TagString: Untagged
@@ -1377,6 +1378,20 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 131416202}
+  m_Mesh: {fileID: 4300000, guid: b39441e518cd8466b99bcae7327f565e, type: 2}
+--- !u!64 &131416206
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131416202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b39441e518cd8466b99bcae7327f565e, type: 2}
 --- !u!1 &143937092
 GameObject:
@@ -8037,6 +8052,7 @@ GameObject:
   - component: {fileID: 1012365050}
   - component: {fileID: 1012365049}
   - component: {fileID: 1012365051}
+  - component: {fileID: 1012365052}
   m_Layer: 0
   m_Name: Building C_Walls_0
   m_TagString: Other
@@ -8114,6 +8130,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 112.13074, y: 6610.7383, z: 2710.5242}
   m_Center: {x: -3455.1797, y: -43.930058, z: -1355.2607}
+--- !u!64 &1012365052
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1012365047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 18bc1a40a966f4dbaaa5f29158c82ccf, type: 2}
 --- !u!1 &1021403527
 GameObject:
   m_ObjectHideFlags: 0
@@ -14110,6 +14140,7 @@ GameObject:
   - component: {fileID: 1597440932}
   - component: {fileID: 1597440934}
   - component: {fileID: 1597440933}
+  - component: {fileID: 1597440935}
   m_Layer: 0
   m_Name: Building A_Walls a_0
   m_TagString: Untagged
@@ -14174,6 +14205,20 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597440931}
+  m_Mesh: {fileID: 4300000, guid: 199e42f49eba84a7bb868955b8bf3190, type: 2}
+--- !u!64 &1597440935
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597440931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 199e42f49eba84a7bb868955b8bf3190, type: 2}
 --- !u!1 &1598782771
 GameObject:

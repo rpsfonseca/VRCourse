@@ -21,7 +21,7 @@ public class VRStare_and_PlayVideo : MonoBehaviour {
     {
         stare_time = stare_time + Time.deltaTime;
 
-        Debug.Log(light.intensity);
+        //Debug.Log(light.intensity);
         if (stare_time >= 2f) // once a certain amount of time has passed, the object will be 'grabbed'
         {
             PlayVideo();
@@ -31,7 +31,7 @@ public class VRStare_and_PlayVideo : MonoBehaviour {
         {
             light.intensity =- 0.0000000001f;
         }
-        Debug.Log(playing);
+        //Debug.Log(playing);
        
     }
 
