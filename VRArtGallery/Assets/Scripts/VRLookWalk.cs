@@ -14,6 +14,8 @@ public class VRLookWalk : MonoBehaviour
 
     public bool moveforward;
     public bool movebackward;
+    public bool moveleft;
+    public bool moveright;
 
     private CharacterController cc;
     private bool connected = false;
@@ -111,14 +113,15 @@ public class VRLookWalk : MonoBehaviour
         // vrCamera.eulerAngles.x >= 180 && vrCamera.eulerAngles.x <= (360 - toggleAngle) ||
         // vrCamera.eulerAngles.x <=180 && vrCamera.eulerAngles.x >= toggleAngle ||
 
-        if ( Input.GetKeyDown(KeyCode.JoystickButton2))
+// ---------------------------------------------------------------
+
+        if ( Input.GetKeyDown(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             moveforward = true;
             movebackward = false;
-            Debug.Log("In move");
 
         } 
-        else if ( Input.GetKeyDown(KeyCode.JoystickButton4) )
+        else if ( Input.GetKeyDown(KeyCode.JoystickButton4)|| Input.GetKeyDown(KeyCode.DownArrow) )
         {
             moveforward = false;
             movebackward = true;
@@ -130,6 +133,29 @@ public class VRLookWalk : MonoBehaviour
                 movebackward = false;
             }
         }
+
+// ---------------------------------------------------------------
+
+        if ( Input.GetKeyDown(KeyCode.JoystickButton6)|| Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            moveleft = true;
+            moveright = false;
+
+        } 
+        else if ( Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.RightArrow) )
+        {
+            moveleft = false;
+            moveright = true;
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton12)) {
+                moveleft = false;
+                moveright = false;
+            }
+        }
+
+// ---------------------------------------------------------------
 
         if (moveforward == true)
         {
@@ -144,9 +170,41 @@ public class VRLookWalk : MonoBehaviour
             cc.SimpleMove(backward * speed);
         }
 
-        if (InteractionManager.currentInteractable != null && Input.GetKeyDown(KeyCode.C))
+        if (moveleft == true)
         {
-            Debug.Log("sdkjhfkjasdhfjkhsdajkhf");
+            Vector3 left = vrCamera.TransformDirection(-Vector3.right);
+            cc.SimpleMove(left * speed);
+        }
+
+        if (moveright == true)
+        {
+            Vector3 right = vrCamera.TransformDirection(Vector3.right);
+            cc.SimpleMove(right * speed);
+        }
+
+// ---------------------------------------------------------------
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow)) {
+            moveleft = false;
+        }
+        
+        if (Input.GetKeyUp(KeyCode.RightArrow)) {
+            moveright = false;
+        }
+        
+        if (Input.GetKeyUp(KeyCode.UpArrow)) {
+            moveforward = false;
+        }
+        
+        if (Input.GetKeyUp(KeyCode.DownArrow)) {
+            movebackward = false;
+        }
+
+// ---------------------------------------------------------------
+
+        if (InteractionManager.currentInteractable != null && (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.Space)))
+        {
+            Debug.Log("Interaction with sculpture");
             InteractionManager.Engage();
         }
     }
