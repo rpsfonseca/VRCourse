@@ -14,14 +14,14 @@ public class ReticleChanger : MonoBehaviour {
     {
         RaycastHit hit;
 
-        if(Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), out hit, 5.0f))
+        if(Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), out hit, 10.0f))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward));
             if (hit.transform.gameObject.tag.Equals("Art"))
             {
                 //Debug.Log("hit art");
-                //reticleIn.GetComponent<Renderer>().enabled = true;
-                //reticleOut.GetComponent<Renderer>().enabled = false;
+                reticleIn.GetComponent<Renderer>().enabled = true;
+                reticleOut.GetComponent<Renderer>().enabled = false;
 
                 InteractionManager.SetCurrentInteractable(hit.transform.GetComponent<Interactable>());
 
@@ -33,8 +33,8 @@ public class ReticleChanger : MonoBehaviour {
             else
             {
                 //Debug.Log("no hit art");
-                //reticleIn.GetComponent<Renderer>().enabled = false;
-                //reticleOut.GetComponent<Renderer>().enabled = true;
+                reticleIn.GetComponent<Renderer>().enabled = false;
+                reticleOut.GetComponent<Renderer>().enabled = true;
 
                 if (InteractionManager.currentInteractable != null)
                 {
