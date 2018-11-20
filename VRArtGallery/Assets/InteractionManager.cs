@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
+    public enum InteractionType
+    {
+        GAZING,
+        PRESSING
+    }
+
     #region Singleton
     private static InteractionManager _instance;
     public static InteractionManager Instance
@@ -22,6 +28,7 @@ public class InteractionManager : MonoBehaviour
     public static event InteractionEvent onDisengage;
 
     public static Interactable currentInteractable;
+
 
     void Awake()
     {
@@ -46,6 +53,11 @@ public class InteractionManager : MonoBehaviour
          * Then call onDisengage
          * Then call RemoveCurrentInteractable
          */
+
+        if (currentInteractable != null && currentInteractable.interactionType == InteractionType.GAZING)
+        {
+            Engaging();
+        }
 	}
 
     public static void SetCurrentInteractable(Interactable interactable)
@@ -58,6 +70,7 @@ public class InteractionManager : MonoBehaviour
 
     public static void RemoveCurrentInteractable()
     {
+        Disengage();
         currentInteractable = null;
         onEngage = null;
         onEngaging = null;
