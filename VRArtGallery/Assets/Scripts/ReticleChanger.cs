@@ -14,7 +14,7 @@ public class ReticleChanger : MonoBehaviour {
     {
         RaycastHit hit;
 
-        if(Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), out hit, 10.0f))
+        if(Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), out hit, 15.0f))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward));
             if (hit.transform.gameObject.tag.Equals("Art"))
