@@ -8,6 +8,8 @@ public class VRLookWalk : MonoBehaviour
 
     public Transform vrCamera;
 
+    public GameObject canvas;
+
     public float toggleAngle = 30.0f;
 
     public float speed = 3.0f;
@@ -202,10 +204,14 @@ public class VRLookWalk : MonoBehaviour
 
 // ---------------------------------------------------------------
 
-        if (InteractionManager.currentInteractable != null && (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.Space)))
+        if (InteractionManager.currentInteractable != null && (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.C)))
         {
             Debug.Log("Interaction with sculpture");
             InteractionManager.Engage();
+            if (canvas && canvas.activeInHierarchy)
+            {
+                canvas.SetActive(false);
+            }
         }
     }
 }

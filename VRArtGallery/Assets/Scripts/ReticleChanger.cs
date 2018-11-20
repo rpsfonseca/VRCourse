@@ -7,6 +7,8 @@ public class ReticleChanger : MonoBehaviour {
     public GameObject reticleIn;
     public GameObject reticleOut;
 
+    public GameObject canvas;
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -22,6 +24,11 @@ public class ReticleChanger : MonoBehaviour {
                 //reticleOut.GetComponent<Renderer>().enabled = false;
 
                 InteractionManager.SetCurrentInteractable(hit.transform.GetComponent<Interactable>());
+
+                if (canvas && !canvas.activeInHierarchy)
+                {
+                    canvas.SetActive(true);
+                }
             }
             else
             {
@@ -31,6 +38,10 @@ public class ReticleChanger : MonoBehaviour {
 
                 if (InteractionManager.currentInteractable != null)
                 {
+                    if (canvas && canvas.activeInHierarchy)
+                    {
+                        canvas.SetActive(false);
+                    }
                     InteractionManager.RemoveCurrentInteractable();
                 }
             }
