@@ -46,6 +46,17 @@ public class ReticleChanger : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+           if (InteractionManager.currentInteractable != null)
+            {
+                if (canvas && canvas.activeInHierarchy)
+                {
+                    canvas.SetActive(false);
+                }
+                InteractionManager.RemoveCurrentInteractable();
+            } 
+        }
 
 	}
 }
