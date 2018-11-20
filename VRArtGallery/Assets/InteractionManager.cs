@@ -63,4 +63,28 @@ public class InteractionManager : MonoBehaviour
         onEngaging = null;
         onDisengage = null;
     }
+
+    public static void Engage()
+    {
+        if (onEngage != null)
+        {
+            onEngage();
+        }
+    }
+
+    public static void Engaging()
+    {
+        if (onEngaging != null)
+        {
+            onEngaging();
+        }
+    }
+
+    public static void Disengage()
+    {
+        if (onDisengage != null)
+        {
+            onDisengage();
+        }
+    }
 }

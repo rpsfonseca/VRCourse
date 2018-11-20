@@ -28,17 +28,16 @@ public class VRLookWalk : MonoBehaviour
         if (Input.anyKeyDown)
             Debug.Log("INPUT: " + Input.inputString);
 
-        if (vrCamera.eulerAngles.x >= 180 && vrCamera.eulerAngles.x <= (360 - toggleAngle) )
+        if (vrCamera.eulerAngles.x >= 180 && vrCamera.eulerAngles.x <= (360 - toggleAngle) /* || Input.GetAxis("AxisY") > 0*/)
         {
             moveforward = true;
             movebackward = false;
         } 
-        else if (vrCamera.eulerAngles.x <=180 && vrCamera.eulerAngles.x >= toggleAngle) 
+        else if (vrCamera.eulerAngles.x <=180 && vrCamera.eulerAngles.x >= toggleAngle /* || Input.GetAxis("AxisY") < 0*/)
         {
             moveforward = false;
             movebackward = true;
         }
-
         else
         {
             moveforward = false;
@@ -56,6 +55,12 @@ public class VRLookWalk : MonoBehaviour
             Vector3 backward = vrCamera.TransformDirection(-Vector3.forward);
 
             cc.SimpleMove(backward * speed);
+        }
+
+        if (InteractionManager.currentInteractable != null && Input.GetKeyDown(KeyCode.C))
+        {
+            Debug.Log("sdkjhfkjasdhfjkhsdajkhf");
+            InteractionManager.Engage();
         }
     }
 }
