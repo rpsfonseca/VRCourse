@@ -33,13 +33,13 @@ public class VRLookWalk : MonoBehaviour
     IEnumerator CheckForControllers() {
     while (true) {
         var controllers = Input.GetJoystickNames();
-        Debug.Log(controllers.Length);
+        // Debug.Log(controllers.Length);
         if (!connected && controllers.Length > 0) {
             connected = true;
-            Debug.Log("Connected");
+            // Debug.Log("Connected");
         } else if (connected && controllers.Length == 0) {
             connected = false;
-            Debug.Log("Disconnected");
+            // Debug.Log("Disconnected");
         }
         yield return new WaitForSeconds(1f);
     }

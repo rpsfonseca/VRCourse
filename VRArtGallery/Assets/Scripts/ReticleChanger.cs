@@ -19,7 +19,7 @@ public class ReticleChanger : MonoBehaviour {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward));
             if (hit.transform.gameObject.tag.Equals("Art") && InteractionManager.currentInteractable == null)
             {
-                Debug.Log("hit art: " + hit.transform.GetComponent<Interactable>());
+                // Debug.Log("hit art: " + hit.transform.GetComponent<Interactable>());
                 reticleIn.GetComponent<Renderer>().enabled = true;
                 reticleOut.GetComponent<Renderer>().enabled = false;
 
@@ -32,7 +32,7 @@ public class ReticleChanger : MonoBehaviour {
             }
             else if (!hit.transform.gameObject.tag.Equals("Art"))
             {
-                Debug.Log("no hit art");
+                // Debug.Log("no hit art");
                 reticleIn.GetComponent<Renderer>().enabled = false;
                 reticleOut.GetComponent<Renderer>().enabled = true;
 
@@ -49,7 +49,7 @@ public class ReticleChanger : MonoBehaviour {
         else
         {
 
-            Debug.Log("not hitting anything");
+            // Debug.Log("not hitting anything");
             if (InteractionManager.currentInteractable != null)
             {
                 if (canvas && canvas.activeInHierarchy)
