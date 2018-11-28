@@ -63,9 +63,13 @@ public class InteractionManager : MonoBehaviour
     public static void SetCurrentInteractable(Interactable interactable)
     {
         currentInteractable = interactable;
-        onEngage += currentInteractable.StartInteraction;
-        onEngaging += currentInteractable.Interaction;
-        onDisengage += currentInteractable.EndInteraction;
+        
+        if (currentInteractable != null) 
+        {
+            onEngage += currentInteractable.StartInteraction;
+            onEngaging += currentInteractable.Interaction;
+            onDisengage += currentInteractable.EndInteraction;
+        }
     }
 
     public static void RemoveCurrentInteractable()
