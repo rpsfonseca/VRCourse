@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DavidInteraction : Interactable 
+public class DavidSculptureInteract : Interactable 
 {
 	// private DavidInteract david;
 
@@ -30,9 +30,8 @@ public class DavidInteraction : Interactable
         stare_time = stare_time + Time.deltaTime;
 
         Debug.Log("Interaction!");
-        Debug.Log(stare_time);
 
-        if (!rotating && stare_time >= 2)
+        if (stare_time >= 2)
         {
             Debug.Log("starting!");
             RotateDavid();
