@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShredPaiting : MonoBehaviour {
 
-    public float shredSpeed = 0.7f;
+    public float shredSpeed = 0.5f;
     public float shredRange = 0.5f;
     public bool canShred = false;
 
@@ -35,6 +35,14 @@ public class ShredPaiting : MonoBehaviour {
         float py = transform.position.y;
         transform.Translate(Vector3.down * shredSpeed * Time.deltaTime, Space.World);
         parent.Translate(Vector3.down * shredSpeed * Time.deltaTime, Space.World);
+    }
+
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collision enter");
+        canShred = false;
+        Destroy(this.GetComponentInChildren<GameObject>());
     }
 
 }
