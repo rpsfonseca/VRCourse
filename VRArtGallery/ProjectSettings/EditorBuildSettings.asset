@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Art Gallery.unity
+    path: Assets/Scenes/0 - Art Gallery.unity
     guid: e1675883194cb436894ae025b833e31e
+  - enabled: 1
+    path: Assets/Scenes/1 - Caravaggio.unity
+    guid: 7342d8677fb774e0d8960b5d3c1c8b18
   m_configObjects: {}
