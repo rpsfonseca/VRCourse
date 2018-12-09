@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DavidSculptureInteract : Interactable
 {
-
-    public bool rotating = false;
     private float nextActionTime = 0.0f;
     public float period = 0.1f;
     public float rotationSpeed = 0f;
@@ -36,7 +34,6 @@ public class DavidSculptureInteract : Interactable
     public override void StartInteraction()
     {
         Debug.Log("started");
-        rotating = true;
         rotateDavid();
 
     }
@@ -44,7 +41,6 @@ public class DavidSculptureInteract : Interactable
     public override void EndInteraction()
     {
         Debug.Log("end");
-        rotating = false;
     }
 
     public void rotateDavid()
