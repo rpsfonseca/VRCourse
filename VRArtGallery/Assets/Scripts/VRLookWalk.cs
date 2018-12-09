@@ -81,7 +81,7 @@ public class VRLookWalk : MonoBehaviour
             Debug.Log("JoystickButton7");
         
         // A
-        if (Input.GetKeyDown(KeyCode.JoystickButton8))
+        if (Input.GetKeyDown(KeyCode.JoystickButton8) || Input.GetKey(KeyCode.A))
             Debug.Log("JoystickButton8");
 
         // A release 
@@ -89,7 +89,7 @@ public class VRLookWalk : MonoBehaviour
             Debug.Log("JoystickButton9");
         
         // B
-        if (Input.GetKeyDown(KeyCode.JoystickButton10))
+        if (Input.GetKeyDown(KeyCode.JoystickButton10) || Input.GetKey(KeyCode.B))
             Debug.Log("JoystickButton10");
         
         // B release

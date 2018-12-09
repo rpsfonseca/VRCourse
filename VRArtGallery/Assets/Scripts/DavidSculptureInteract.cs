@@ -2,64 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DavidSculptureInteract : Interactable 
+public class DavidSculptureInteract : Interactable
 {
-	// private DavidInteract david;
 
-    public float stare_time = 0f; // timer 
-    public float y = 0f;
     public bool rotating = false;
-    private float rotationSpeed;
+    private float nextActionTime = 0.0f;
+    public float period = 0.1f;
+    public float rotationSpeed = 0f;
+    public float y = 0f;
 
-    // private Vector3 davidSize;
+    void Update()
+    {
+        rotationSpeed = 0f;
 
-    // public float sizeX;
-    // public float sizeY;
-    // public float sizeZ;
+        // A
+        if (Input.GetKeyDown(KeyCode.JoystickButton8) || Input.GetKey(KeyCode.A))
+        {
+            Debug.Log("JoystickButton8 or A pressed");
+            rotationSpeed = 100f;
+        }
 
-    // private float y;
-    // private bool rotateY;
-    
+        // B
+        if (Input.GetKeyDown(KeyCode.JoystickButton10) || Input.GetKey(KeyCode.B))
+        {
+            Debug.Log("JoystickButton10 or B pressed");
+            rotationSpeed = -100f;
+        }
+
+        rotateDavid();
+    }
+
+
     public override void StartInteraction()
     {
-        stare_time = 0f;
-    }
+        Debug.Log("started");
+        rotating = true;
+        rotateDavid();
 
-    public override void Interaction()
-    {
-        stare_time = stare_time + Time.deltaTime;
-
-        Debug.Log("Interaction!");
-
-        if (stare_time >= 2)
-        {
-            Debug.Log("starting!");
-            RotateDavid();
-        }
-    }
-
-    public void ResetFigure()
-    {
-        stare_time = 0f;
-        rotationSpeed = 0f;
-        rotating = false;
     }
 
     public override void EndInteraction()
     {
-        ResetFigure();
+        Debug.Log("end");
+        rotating = false;
     }
 
-
-    public void RotateDavid()
+    public void rotateDavid()
     {
-        rotating = true;
-        rotationSpeed = 20f;
-        y += Time.deltaTime * rotationSpeed;
+        if (Time.time > nextActionTime)
+        {
+            nextActionTime += period;
 
-        if (y > 360.0f)
-            y = 0.0f;
+            if (rotationSpeed != 0)
+            {
+                y += Time.deltaTime * rotationSpeed;
 
-        transform.localRotation = Quaternion.Euler(0, y, 0);
+                if (y > 360.0f)
+                    y = 0.0f;
+
+                transform.localRotation = Quaternion.Euler(0, y, 0);
+            }
+        }
     }
+   
 }
