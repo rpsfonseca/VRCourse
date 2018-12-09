@@ -16,9 +16,6 @@ public class DavidSculptureInteract : Interactable
 
     void Update()
     {
-        rotationSpeed = 0f;
-        scaleDiff = 0f;
-
         // A
         if (Input.GetKeyDown(KeyCode.JoystickButton8) || Input.GetKey(KeyCode.A))
         {
@@ -34,7 +31,7 @@ public class DavidSculptureInteract : Interactable
         }
 
         // C
-        if (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKey(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.JoystickButton12) || Input.GetKey(KeyCode.C))
         {
             Debug.Log("C pressed");
             scaleDiff = 0.1f;
@@ -45,6 +42,18 @@ public class DavidSculptureInteract : Interactable
         {
             Debug.Log("D pressed");
             scaleDiff = -0.1f;
+        }
+
+        if (
+            Input.GetKeyDown(KeyCode.JoystickButton9) || Input.GetKeyUp(KeyCode.A) ||
+            Input.GetKeyDown(KeyCode.JoystickButton11) || Input.GetKeyUp(KeyCode.B) ||
+            Input.GetKeyDown(KeyCode.JoystickButton13) || Input.GetKeyUp(KeyCode.C) ||
+            Input.GetKeyDown(KeyCode.JoystickButton15) || Input.GetKeyUp(KeyCode.D)
+        )
+        {
+            Debug.Log("Stop Interaction with David");
+            rotationSpeed = 0f;
+            scaleDiff = 0f;
         }
 
         if (interacting)
