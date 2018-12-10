@@ -8,21 +8,27 @@ public class WavingZeus : Interactable
 {
     public Animator animator;
     public AudioSource welcome;
-
+    
     public override void StartInteraction()
     {
-        animator.SetBool("shouldWave", true);
+        animator.SetTrigger("wave");
 
         welcome = GetComponent<AudioSource>();
         welcome.Play(0);
         Debug.Log("started");
     }
 
+    public override void Interaction()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            animator.SetTrigger("wave");
+        }
+    }
+
     public override void EndInteraction()
     {
-        animator.SetBool("shouldWave", false);
-
-        welcome.Pause();
-        Debug.Log("Pause: " + welcome.time);
+        /*welcome.Pause();
+        Debug.Log("Pause: " + welcome.time);*/
     }
 }
