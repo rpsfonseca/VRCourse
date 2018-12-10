@@ -2,64 +2,114 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DavidSculptureInteract : Interactable 
+public class DavidSculptureInteract : Interactable
 {
-	// private DavidInteract david;
-
-    public float stare_time = 0f; // timer 
+    public float rotationSpeed = 0f;
     public float y = 0f;
-    public bool rotating = false;
-    private float rotationSpeed;
 
-    // private Vector3 davidSize;
+    public float scale = 0f;
+    public float scaleDiff = 0f;
 
-    // public float sizeX;
-    // public float sizeY;
-    // public float sizeZ;
+    public Vector3 newScale;
 
-    // private float y;
-    // private bool rotateY;
-    
-    public override void StartInteraction()
+    public bool interacting = false;
+
+    void Update()
     {
-        stare_time = 0f;
-    }
-
-    public override void Interaction()
-    {
-        stare_time = stare_time + Time.deltaTime;
-
-        Debug.Log("Interaction!");
-
-        if (stare_time >= 2)
+        // A
+        if (Input.GetKeyDown(KeyCode.JoystickButton8) || Input.GetKey(KeyCode.A))
         {
-            Debug.Log("starting!");
-            RotateDavid();
+            Debug.Log("JoystickButton8 or A pressed");
+            rotationSpeed = 100f;
+        }
+
+        // B
+        if (Input.GetKeyDown(KeyCode.JoystickButton10) || Input.GetKey(KeyCode.B))
+        {
+            Debug.Log("JoystickButton10 or B pressed");
+            rotationSpeed = -100f;
+        }
+
+        // C
+        if (Input.GetKeyDown(KeyCode.JoystickButton12) || Input.GetKey(KeyCode.C))
+        {
+            Debug.Log("C pressed");
+            scaleDiff = 0.1f;
+        }
+
+        // D
+        if (Input.GetKeyDown(KeyCode.JoystickButton14) || Input.GetKey(KeyCode.D))
+        {
+            Debug.Log("D pressed");
+            scaleDiff = -0.1f;
+        }
+
+        if (
+            Input.GetKeyDown(KeyCode.JoystickButton9) || Input.GetKeyUp(KeyCode.A) ||
+            Input.GetKeyDown(KeyCode.JoystickButton11) || Input.GetKeyUp(KeyCode.B) ||
+            Input.GetKeyDown(KeyCode.JoystickButton13) || Input.GetKeyUp(KeyCode.C) ||
+            Input.GetKeyDown(KeyCode.JoystickButton15) || Input.GetKeyUp(KeyCode.D)
+        )
+        {
+            Debug.Log("Stop Interaction with David");
+            rotationSpeed = 0f;
+            scaleDiff = 0f;
+        }
+
+        if (interacting)
+        {
+            rotateDavid();
+            scaleDavid();
         }
     }
 
-    public void ResetFigure()
+
+    public override void StartInteraction()
     {
-        stare_time = 0f;
-        rotationSpeed = 0f;
-        rotating = false;
+        Debug.Log("started");
+        interacting = true;
     }
 
     public override void EndInteraction()
     {
-        ResetFigure();
+        Debug.Log("end");
+        interacting = false;
     }
 
-
-    public void RotateDavid()
+    public void rotateDavid()
     {
-        rotating = true;
-        rotationSpeed = 20f;
-        y += Time.deltaTime * rotationSpeed;
 
-        if (y > 360.0f)
-            y = 0.0f;
+        if (rotationSpeed != 0)
+        {
+            y += Time.deltaTime * rotationSpeed;
 
-        transform.localRotation = Quaternion.Euler(0, y, 0);
+            if (y > 360.0f)
+                y = 0.0f;
+
+            transform.localRotation = Quaternion.Euler(0, y, 0);
+        }
     }
+
+    public void scaleDavid()
+    {
+        if (scaleDiff != 0)
+        {
+            scale += Time.deltaTime * scaleDiff;
+
+            if (scale > 1.0f)
+            {
+                scale = 1.0f;
+                scaleDiff = scaleDiff * -1.0f;
+            }
+
+            if (scale < 0.5f)
+            {
+                scale = 0.5f;
+                scaleDiff = scaleDiff * -1.0f;
+            }
+
+            transform.localScale = new Vector3(scale, scale, scale);
+        }
+    }
+
 }
