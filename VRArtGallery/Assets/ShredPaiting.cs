@@ -6,13 +6,23 @@ public class ShredPaiting : MonoBehaviour {
 
     public float shredSpeed = 0.5f;
     public float shredRange = 0.5f;
-    public bool canShred = false;
+
+    private bool shred = false;
+    private bool hasShreded = false;
 
     public Transform parent;
 
+    GameObject childPaiting;
+    MeshRenderer mesh;
+    MeshRenderer[] childMesh;
+    AudioSource audio;
+
     private void Start()
     {
+        mesh = this.GetComponent<MeshRenderer>();
+        childMesh = this.GetComponentsInChildren<MeshRenderer>();
         parent = this.GetComponentInParent<Transform>();
+        audio = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,10 +30,11 @@ public class ShredPaiting : MonoBehaviour {
 
         if (Input.GetButtonDown("Fire1"))
         {
-            canShred = true;
+            shred = true;
+            audio.Play();
         }
 
-        if (canShred)
+        if (shred && !hasShreded)
         {
             Shred();
         }
@@ -35,14 +46,18 @@ public class ShredPaiting : MonoBehaviour {
         float py = transform.position.y;
         transform.Translate(Vector3.down * shredSpeed * Time.deltaTime, Space.World);
         parent.Translate(Vector3.down * shredSpeed * Time.deltaTime, Space.World);
+        Debug.Log(transform.position.y);
     }
 
-
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collision enter");
-        canShred = false;
-        Destroy(this.GetComponentInChildren<GameObject>());
+        if (other.CompareTag("Frame"))
+        {
+            shred = false;
+            hasShreded = true;
+            childMesh[0].enabled = true;
+            childMesh[1].enabled = false;
+            audio.enabled = false;
+        }
     }
-
 }

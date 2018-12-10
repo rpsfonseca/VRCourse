@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Art
   - Other
+  - Frame
   layers:
   - Default
   - TransparentFX
