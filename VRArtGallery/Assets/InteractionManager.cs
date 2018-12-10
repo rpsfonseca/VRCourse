@@ -58,7 +58,12 @@ public class InteractionManager : MonoBehaviour
         {
             Engaging();
         }
-	}
+
+        if (currentInteractable != null && currentInteractable.name == "zeus@Waving")
+        {
+            Engaging();
+        }
+    }
 
     public static void SetCurrentInteractable(Interactable interactable)
     {
