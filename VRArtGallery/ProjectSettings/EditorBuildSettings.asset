@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2 - AuctionRoom.unity
     guid: 9ac50e684d50b4a4ba8c1a1954838135
+  - enabled: 1
+    path: Assets/Scenes/3 - VanGogh3D.unity
+    guid: 2a56b68f5f8c8a748860cfcd07cede6d
   m_configObjects: {}
