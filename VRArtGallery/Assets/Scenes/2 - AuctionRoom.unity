@@ -1222,6 +1222,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 82309047506870366, guid: c16ab02da560f574ba0011dad24587b7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.503
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c16ab02da560f574ba0011dad24587b7, type: 2}
   m_IsPrefabAsset: 0
@@ -1455,7 +1460,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 172
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1493,7 +1498,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
