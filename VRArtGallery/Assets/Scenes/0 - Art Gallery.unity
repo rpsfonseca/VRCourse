@@ -2486,7 +2486,7 @@ MeshFilter:
   m_Mesh: {fileID: 4300000, guid: 5d35987d0551646aa95a6f9a1e2a9f2a, type: 2}
 --- !u!114 &980744797 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114582399051454268, guid: cfee4d6db171cb64f8c31b38aeaa77aa,
+  m_CorrespondingSourceObject: {fileID: 114889003165953080, guid: cfee4d6db171cb64f8c31b38aeaa77aa,
     type: 2}
   m_PrefabInternal: {fileID: 2085890032}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -6092,6 +6092,21 @@ Prefab:
       propertyPath: textSlot
       value: 
       objectReference: {fileID: 980744797}
+    - target: {fileID: 114258282030642490, guid: 986d67008e72f824bb104518cfac0048,
+        type: 2}
+      propertyPath: painterText
+      value: 
+      objectReference: {fileID: 980744797}
+    - target: {fileID: 114258282030642490, guid: 986d67008e72f824bb104518cfac0048,
+        type: 2}
+      propertyPath: dateText
+      value: 
+      objectReference: {fileID: 2085890034}
+    - target: {fileID: 114258282030642490, guid: 986d67008e72f824bb104518cfac0048,
+        type: 2}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 2085890033}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 986d67008e72f824bb104518cfac0048, type: 2}
   m_IsPrefabAsset: 0
@@ -6243,9 +6258,25 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1082326684}
+    - target: {fileID: 1153660529380594, guid: cfee4d6db171cb64f8c31b38aeaa77aa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfee4d6db171cb64f8c31b38aeaa77aa, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &2085890033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114582399051454268, guid: cfee4d6db171cb64f8c31b38aeaa77aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 2085890032}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &2085890034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114413353331404734, guid: cfee4d6db171cb64f8c31b38aeaa77aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 2085890032}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2097987388
 GameObject:
   m_ObjectHideFlags: 0
