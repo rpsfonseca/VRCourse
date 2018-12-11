@@ -113,7 +113,7 @@ public class VRLookWalk : MonoBehaviour
                 Debug.Log("JoystickButton13");
 
             // D
-            if (Input.GetKeyDown(KeyCode.JoystickButton14))
+            if (Input.GetKeyDown(KeyCode.JoystickButton14) || Input.GetKeyDown(KeyCode.D))
             {
                 Debug.Log("JoystickButton14");
                 SceneManager.LoadScene(2);
