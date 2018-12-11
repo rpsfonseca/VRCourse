@@ -71,24 +71,31 @@ public class InteractionManager : MonoBehaviour
 
     public static string GetInteractionMessage()
     {
-        if (currentInteractable.gameObject.name == "David2")
+        if (currentInteractable != null)
         {
-            return "Hold C, D to scale;\nA and B to rotate";
+            if (currentInteractable.gameObject.name == "David2")
+            {
+                return "Hold C, D to scale;\nA and B to rotate";
+            }
+            switch (currentInteractable.interactionType)
+            {
+                case InteractionType.GAZING:
+                    return "Gaze at the painting for 3 seconds";
+                    break;
+                case InteractionType.PRESSING:
+                    return "Press 'C' to interact";
+                    break;
+                case InteractionType.PRESS_AND_FOCUS:
+                    return "Press 'C' to see more information";
+                    break;
+                default:
+                    return "";
+                    break;
+            }
         }
-        switch (currentInteractable.interactionType)
+        else
         {
-            case InteractionType.GAZING:
-                return "Gaze at the painting for 3 seconds";
-                break;
-            case InteractionType.PRESSING:
-                return "Press 'C' to interact";
-                break;
-            case InteractionType.PRESS_AND_FOCUS:
-                return "Press 'C' to see more information";
-                break;
-            default:
-                return "";
-                break;
+            return "";
         }
     }
 
