@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class VRLookWalk : MonoBehaviour
@@ -113,7 +114,10 @@ public class VRLookWalk : MonoBehaviour
 
             // D
             if (Input.GetKeyDown(KeyCode.JoystickButton14))
+            {
                 Debug.Log("JoystickButton14");
+                SceneManager.LoadScene(2);
+            }
 
             // D release
             if (Input.GetKeyDown(KeyCode.JoystickButton15))
