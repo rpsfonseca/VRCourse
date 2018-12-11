@@ -7,6 +7,8 @@ public class AuctioneerManager : MonoBehaviour {
     // Use this for initialization
 
     AudioSource[] audio;
+    private bool canBid = false;
+    public bool inBidRange = false;
 
 	void Start () {
         audio = this.GetComponentsInChildren<AudioSource>();
@@ -14,7 +16,20 @@ public class AuctioneerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (!audio[0].isPlaying)
+        {
+            canBid = false;
+        }
+        else
+        {
+            canBid = true;
+        }
+        if (inBidRange && canBid)
+        {
+
+        }
+
 	}
 
     public void OnTriggerEnter(Collider other)
