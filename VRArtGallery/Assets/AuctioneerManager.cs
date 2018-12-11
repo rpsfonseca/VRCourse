@@ -8,6 +8,7 @@ public class AuctioneerManager : MonoBehaviour {
 
     AudioSource[] audio;
     private bool canBid = false;
+    public bool inBidRange = false;
 
 	void Start () {
         audio = this.GetComponentsInChildren<AudioSource>();
@@ -19,6 +20,14 @@ public class AuctioneerManager : MonoBehaviour {
         if (!audio[0].isPlaying)
         {
             canBid = false;
+        }
+        else
+        {
+            canBid = true;
+        }
+        if (inBidRange && canBid)
+        {
+
         }
 
 	}

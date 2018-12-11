@@ -9,6 +9,7 @@ public class ShredPaiting : MonoBehaviour {
 
     private bool shred = false;
     private bool hasShreded = false;
+    private bool isShreding = false;
 
     public Transform parent;
 
@@ -28,14 +29,20 @@ public class ShredPaiting : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.JoystickButton12) || Input.GetKey(KeyCode.C))
         {
-            shred = true;
-            audio.Play();
+            Debug.Log("C pressed");
+
+            if (!isShreding)
+            {
+                shred = true;
+                audio.Play();
+            }
         }
 
         if (shred && !hasShreded)
         {
+            isShreding = true;
             Shred();
         }
 

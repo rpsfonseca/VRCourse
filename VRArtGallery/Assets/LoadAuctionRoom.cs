@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LoadAuctionRoom : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    Scene Scene;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -17,10 +20,16 @@ public class LoadAuctionRoom : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
+        Scene = SceneManager.GetActiveScene();
+
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player");
-            Application.LoadLevel("2 - AuctionRoom");
+            if(Scene.name.Equals("0 - Art Gallery"))
+                Application.LoadLevel("2 - AuctionRoom");
+            else
+                Application.LoadLevel("0 - Art Gallery");
+            
         }
+        
     }
 }
