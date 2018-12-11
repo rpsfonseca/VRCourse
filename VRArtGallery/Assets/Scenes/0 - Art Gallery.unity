@@ -6092,11 +6092,6 @@ Prefab:
       propertyPath: textSlot
       value: 
       objectReference: {fileID: 980744797}
-    - target: {fileID: 23364847737215532, guid: 986d67008e72f824bb104518cfac0048,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5c04955160434d345a4e61cedafd44f7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 986d67008e72f824bb104518cfac0048, type: 2}
   m_IsPrefabAsset: 0
