@@ -6,11 +6,13 @@ public class PlayMonalisa : MonoBehaviour {
 
 
     public UnityEngine.Video.VideoPlayer videoPlayer;
-    public GameObject painting;
+    GameObject painting;
+    MeshRenderer mesh;
 
     void Start () {
 
         painting = this.GetComponentInChildren<GameObject>();
+        mesh = painting.GetComponent<MeshRenderer>();
         videoPlayer = this.GetComponent<UnityEngine.Video.VideoPlayer>();
 
 	}
@@ -24,7 +26,7 @@ public class PlayMonalisa : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            
+            mesh.enabled = false;
             videoPlayer.enabled = true;
             videoPlayer.Play();
         }
@@ -34,6 +36,7 @@ public class PlayMonalisa : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
+            mesh.enabled = true;
             videoPlayer.enabled = false;
         }
     }
