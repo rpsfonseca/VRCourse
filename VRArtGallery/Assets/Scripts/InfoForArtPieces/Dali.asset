@@ -14,8 +14,6 @@ MonoBehaviour:
   title: 'The Persistence of Memory '
   painter: "Salvador Dal\xED"
   date: 1931
-  description: "The well-known surrealist piece introduced the image of the soft melting
-    pocket watch. It epitomizes Dal\xED's theory of \"softness\" and \"hardness\",
-    which was central to his thinking at the time. As Dawn Ad\xE8s wrote, \"The soft
-    watches are an unconscious symbol of the relativity of space and time, a Surrealist
-    meditation on the collapse of our notions of a fixed cosmic order\""
+  description: "AsDawn Ad\xE8s wrote, \"The soft watches are an unconscious symbol
+    of the relativity of space and time, a Surrealist meditation on the collapse of
+    our notions of a fixed cosmic order\""
