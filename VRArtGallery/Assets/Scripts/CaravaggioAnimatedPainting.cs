@@ -16,7 +16,8 @@ public class CaravaggioAnimatedPainting : Interactable
         videoPlayer.Stop();
         //StartCoroutine("CallEnd");
         InteractionManager.RemoveCurrentInteractable();
-        SceneManager.LoadScene(1);
+        LevelChanger.FadeToLevel(1);
+        //SceneManager.LoadScene(1);
     }
 
     public override void Interaction()
