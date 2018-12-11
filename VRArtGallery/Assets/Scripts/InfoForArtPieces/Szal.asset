@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09fe945227b9ef45892d2072d60c518, type: 3}
+  m_Name: Szal
+  m_EditorClassIdentifier: 
+  title: Frenzy of Exultations
+  painter: "W\u0142adys\u0142aw Podkowi\u0144ski"
+  date: 1893
+  description: "The painting by Polish artist, W\u0142adys\u0142aw Podkowi\u0144ski,
+    and is credited as the most famous work in his output. It is considered the first
+    work of symbolism in Polish art, during a period when Poland was partitioned between
+    its neighbours: Russia, Germany and Austria."

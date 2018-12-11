@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09fe945227b9ef45892d2072d60c518, type: 3}
+  m_Name: Dali
+  m_EditorClassIdentifier: 
+  title: 'The Persistence of Memory '
+  painter: "Salvador Dal\xED"
+  date: 1931
+  description: "The well-known surrealist piece introduced the image of the soft melting
+    pocket watch. It epitomizes Dal\xED's theory of \"softness\" and \"hardness\",
+    which was central to his thinking at the time. As Dawn Ad\xE8s wrote, \"The soft
+    watches are an unconscious symbol of the relativity of space and time, a Surrealist
+    meditation on the collapse of our notions of a fixed cosmic order\""
