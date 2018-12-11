@@ -35,6 +35,8 @@ public class InteractionManager : MonoBehaviour
     void Awake()
     {
         _instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Use this for initialization
@@ -69,6 +71,10 @@ public class InteractionManager : MonoBehaviour
 
     public static string GetInteractionMessage()
     {
+        if (currentInteractable.gameObject.name == "David2")
+        {
+            return "Hold C, D to scale;\nA and B to rotate";
+        }
         switch (currentInteractable.interactionType)
         {
             case InteractionType.GAZING:
