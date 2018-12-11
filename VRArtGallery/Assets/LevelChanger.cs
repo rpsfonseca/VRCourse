@@ -30,7 +30,7 @@ public class LevelChanger : MonoBehaviour
         {
             Camera.main.transform.parent.position = new Vector3(21.02f, 5.48f, -0.14f);
             Camera.main.transform.parent.rotation = new Quaternion();
-            Camera.main.transform.parent.rotation.SetEulerAngles(new Vector3(0.0f, -89.11f, 0.0f));
+            Camera.main.transform.parent.rotation = Quaternion.Euler(new Vector3(0.0f, -89.11f, 0.0f));
         }
         SceneManager.LoadScene(levelToLoad);
     }
