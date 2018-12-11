@@ -47,6 +47,7 @@ public class AuctioneerManager : MonoBehaviour {
         if(audio[1].enabled && !audio[1].isPlaying)
         {
             shredPainting.shred = true;
+            canBid = false;
         }
 
     }
