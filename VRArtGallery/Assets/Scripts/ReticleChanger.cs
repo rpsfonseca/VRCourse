@@ -10,8 +10,13 @@ public class ReticleChanger : MonoBehaviour {
 
     public GameObject canvas;
 
-	// Update is called once per frame
-	void Update ()
+    private void Start()
+    {
+        DontDestroyOnLoad(canvas.gameObject);
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         RaycastHit hit;
 

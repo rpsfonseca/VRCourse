@@ -26,12 +26,7 @@ public class GameManager : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-    }
 
-    //Update is called every frame.
-    void Update()
-    {
-
-
+        DontDestroyOnLoad(canvas.gameObject);
     }
 }

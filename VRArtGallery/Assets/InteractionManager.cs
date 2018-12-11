@@ -35,6 +35,8 @@ public class InteractionManager : MonoBehaviour
     void Awake()
     {
         _instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Use this for initialization
