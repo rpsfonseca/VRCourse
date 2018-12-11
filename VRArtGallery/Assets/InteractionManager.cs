@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,8 @@ public class InteractionManager : MonoBehaviour
     public enum InteractionType
     {
         GAZING,
-        PRESSING
+        PRESSING,
+        PRESS_AND_FOCUS
     }
 
     #region Singleton
@@ -62,6 +64,25 @@ public class InteractionManager : MonoBehaviour
         if (currentInteractable != null && currentInteractable.name == "zeus@Waving")
         {
             Engaging();
+        }
+    }
+
+    public static string GetInteractionMessage()
+    {
+        switch (currentInteractable.interactionType)
+        {
+            case InteractionType.GAZING:
+                return "Gaze at the painting for 3 seconds";
+                break;
+            case InteractionType.PRESSING:
+                return "Press 'C' to interact";
+                break;
+            case InteractionType.PRESS_AND_FOCUS:
+                return "Press 'C' to see more information";
+                break;
+            default:
+                return "";
+                break;
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReticleChanger : MonoBehaviour {
 
@@ -23,11 +24,15 @@ public class ReticleChanger : MonoBehaviour {
                 reticleIn.GetComponent<Renderer>().enabled = true;
                 reticleOut.GetComponent<Renderer>().enabled = false;
 
-                InteractionManager.SetCurrentInteractable(hit.transform.GetComponent<Interactable>());
+                Interactable aux = hit.transform.GetComponent<Interactable>();
+
+                InteractionManager.SetCurrentInteractable(aux);
 
                 if (canvas && !canvas.activeInHierarchy)
                 {
                     canvas.SetActive(true);
+
+                    canvas.GetComponentInChildren<Text>().text = InteractionManager.GetInteractionMessage();
                 }
             }
             else if (!hit.transform.gameObject.tag.Equals("Art"))
@@ -60,5 +65,10 @@ public class ReticleChanger : MonoBehaviour {
             } 
         }
 
-	}
+        if (GameManager.instance.focused && canvas && canvas.activeInHierarchy)
+        {
+            canvas.SetActive(false);
+        }
+
+    }
 }
