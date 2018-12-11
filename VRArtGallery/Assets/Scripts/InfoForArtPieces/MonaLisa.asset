@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09fe945227b9ef45892d2072d60c518, type: 3}
+  m_Name: MonaLisa
+  m_EditorClassIdentifier: 
+  title: Mona Lisa
+  painter: Leonardo da Vinci
+  date: "1503\u201306"
+  description: A half-length portrait painting by the Italian Renaissance artist Leonardo
+    da Vinci that has been described as "the best known, the most visited, the most
+    written about, the most sung about, the most parodied work of art in the world".

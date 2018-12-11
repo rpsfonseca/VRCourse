@@ -7,6 +7,7 @@ public class InfoShower : Interactable
 {
     public ArtInfo artInfo;
     public Text textSlot;
+    public Text titleText;
     public Text painterText;
     public Text dateText;
     public Text descriptionText;
@@ -18,9 +19,10 @@ public class InfoShower : Interactable
         // "Aenean fermentum massa in lacus consequat lobortis eget a nibh. Pellentesque diam purus, volutpat sed aliquam in, ultrices nec est.Aliquam lacus dolor, congue nec maximus ut, sodales a lectus. Sed dolor mi, mollis quis augue ornare, sollicitudin pretium nisl. In hac habitasse platea dictumst.Aliquam rhoncus augue lacus, et elementum augue consequat id. Maecenas cursus ligula enim, quis pretium purus dapibus et. Fusce condimentum lacus tellus, ac dapibus massa porttitor eu.\n\n" +
         //"PRESS 'C' AGAIN TO CLOSE INFO";
 
-        painterText.text += artInfo.painter;
-        dateText.text += artInfo.date;
-        descriptionText.text += artInfo.description;
+        titleText.text = artInfo.title;
+        painterText.text = artInfo.painter;
+        dateText.text = artInfo.date;
+        descriptionText.text = artInfo.description;
 
         GameManager.instance.canvas.gameObject.SetActive(true);
         GameManager.instance.focused = true;
