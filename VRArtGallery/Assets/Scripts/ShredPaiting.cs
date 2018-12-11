@@ -7,7 +7,7 @@ public class ShredPaiting : MonoBehaviour {
     public float shredSpeed = 0.5f;
     public float shredRange = 0.5f;
 
-    private bool shred = false;
+    public bool shred = false;
     private bool hasShreded = false;
     private bool isShreding = false;
 
@@ -29,15 +29,11 @@ public class ShredPaiting : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        if (Input.GetKeyDown(KeyCode.JoystickButton12) || Input.GetKey(KeyCode.C))
-        {
-            Debug.Log("C pressed");
+        
 
-            if (!isShreding)
-            {
-                shred = true;
-                audio.Play();
-            }
+        if(shred && !isShreding)
+        {
+            audio.Play();
         }
 
         if (shred && !hasShreded)
