@@ -24,11 +24,18 @@ public class LoadVanGogh3D : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             if (Scene.name.Equals("0 - Art Gallery"))
-                Application.LoadLevel("3 - VanGogh3D");
+                LevelChanger.FadeToLevel(3);
             else
-                Application.LoadLevel("0 - Art Gallery");
+                LevelChanger.FadeToLevel(0);
 
-        }
+            //LevelChanger.FadeToLevel(3);
+            //Application.LoadLevel("2 - AuctionRoom");
+            /*else
+            {
+
+                LevelChanger.FadeToLevel(0);*/
+
+         }
     }
 
 }
