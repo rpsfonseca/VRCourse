@@ -24,12 +24,15 @@ public class LoadAuctionRoom : MonoBehaviour {
 
         if (other.CompareTag("Player"))
         {
-            if(Scene.name.Equals("0 - Art Gallery"))
+            if (Scene.name.Equals("0 - Art Gallery"))
                 LevelChanger.FadeToLevel(2);
             //Application.LoadLevel("2 - AuctionRoom");
             else
-                Application.LoadLevel("0 - Art Gallery");
-            
+            {
+
+                LevelChanger.FadeToLevel(0);
+            }
+
         }
         
     }

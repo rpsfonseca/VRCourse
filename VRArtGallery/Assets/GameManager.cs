@@ -27,6 +27,6 @@ public class GameManager : MonoBehaviour
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
 
-        DontDestroyOnLoad(canvas.gameObject);
+        //DontDestroyOnLoad(canvas.gameObject);
     }
 }

@@ -29,7 +29,7 @@ public class VRLookWalk : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         StartCoroutine(CheckForControllers());
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     IEnumerator CheckForControllers()

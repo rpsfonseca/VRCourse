@@ -36,7 +36,7 @@ public class InteractionManager : MonoBehaviour
     {
         _instance = this;
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Use this for initialization

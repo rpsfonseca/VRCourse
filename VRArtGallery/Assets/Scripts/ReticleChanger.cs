@@ -12,7 +12,7 @@ public class ReticleChanger : MonoBehaviour {
 
     private void Start()
     {
-        DontDestroyOnLoad(canvas.gameObject);
+        //DontDestroyOnLoad(canvas.gameObject);
     }
 
     // Update is called once per frame
