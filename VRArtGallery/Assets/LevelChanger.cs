@@ -28,7 +28,7 @@ public class LevelChanger : MonoBehaviour
         }
         else if (levelToLoad == 2)
         {
-            Camera.main.transform.parent.position = new Vector3(21.02f, 5.48f, -0.14f);
+            Camera.main.transform.parent.position = new Vector3(8.79f, 2.97f, -0.14f);
             Camera.main.transform.parent.rotation = new Quaternion();
             Camera.main.transform.parent.rotation = Quaternion.Euler(new Vector3(0.0f, -89.11f, 0.0f));
         }

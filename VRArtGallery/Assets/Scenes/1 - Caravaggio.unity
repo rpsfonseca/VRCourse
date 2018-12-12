@@ -3335,6 +3335,11 @@ Prefab:
       propertyPath: m_TagString
       value: Art
       objectReference: {fileID: 0}
+    - target: {fileID: 114981889384335658, guid: be153e0790da1654d982f6f50dcac804,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be153e0790da1654d982f6f50dcac804, type: 2}
   m_IsPrefabAsset: 0

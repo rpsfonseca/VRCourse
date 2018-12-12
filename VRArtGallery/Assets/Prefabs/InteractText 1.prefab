@@ -115,7 +115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'C' to interact
+  m_Text: Gaze at the painting for 3 seconds
 --- !u!222 &222699987436005916
 CanvasRenderer:
   m_ObjectHideFlags: 1

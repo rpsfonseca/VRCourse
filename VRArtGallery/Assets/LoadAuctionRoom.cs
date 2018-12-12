@@ -25,7 +25,8 @@ public class LoadAuctionRoom : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             if(Scene.name.Equals("0 - Art Gallery"))
-                Application.LoadLevel("2 - AuctionRoom");
+                LevelChanger.FadeToLevel(2);
+            //Application.LoadLevel("2 - AuctionRoom");
             else
                 Application.LoadLevel("0 - Art Gallery");
             
