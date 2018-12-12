@@ -2629,6 +2629,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4952766791233218, guid: 0efc619bc6fc641c69f0447d1153e55c,
     type: 2}
   m_PrefabInternal: {fileID: 203122788}
+--- !u!1001 &1505765147
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.920225
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.03999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235918621599134, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540477795016900, guid: 00f4af76f226cfd44b1594a3a90c3395,
+        type: 2}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 2146934797}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00f4af76f226cfd44b1594a3a90c3395, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1556549581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,3 +3972,8 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2146934792}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!223 &2146934797 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 223755154193265502, guid: 9a19f1c3b483d4df4a347ce70f24b567,
+    type: 2}
+  m_PrefabInternal: {fileID: 2146934792}
